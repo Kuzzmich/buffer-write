@@ -1,0 +1,18 @@
+{
+  "name": "buffer-test-app",
+  "description": "buffer app for ClickHouse data writing",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=production node app.js"
+  },
+  "dependencies": {
+    "bull": "^3.18.0",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "cross-fetch": "^3.0.6",
+    "express": "4.x",
+    "file-type": "^14.7.1"
+  },
+  "devDependencies": {}
+}
