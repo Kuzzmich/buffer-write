@@ -1,4 +1,10 @@
 {
   "redisUrl": "redis://127.0.0.1:6379",
-
+  "clickHouse": {
+    "host": "http://localhost",
+    "port": 32770,
+    "dbName": "actors"
+  },
+  "maxTimeDelay": 30,
+  "maxMessagesCount": 10
 }

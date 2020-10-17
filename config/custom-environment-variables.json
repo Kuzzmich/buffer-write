@@ -1,0 +1,10 @@
+{
+  "redisUrl": "redisUrl",
+  "clickHouse": {
+    "host": "chHost",
+    "port": "chPort",
+    "dbName": "chDbName"
+  },
+  "maxTimeDelay": "maxTimeDelay",
+  "maxMessagesCount": "maxMessagesCount"
+}
