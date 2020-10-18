@@ -51,12 +51,14 @@ Data model:
   }
 }
 ```
-Where `table` - table name where data will be inserted and you are able to set any table name you prefer because it will be
-created in case if it doesnt't exist, `data` - key/value pairs of inserting data.
+Where 
+- `table` - table name where data will be inserted and you are able to set any table name you prefer. It will be
+created in case if it doesnt't exist;
+- `data` - key/value pairs of inserting data.
 <br><br>
 
 #### Few words from the author
-I tried to use couple of npm packages for clickhouse, but both of them had the bug with choosing `JSONEachRow` format
+I tried to use couple of npm packages for clickhouse, but both of them had the bug with setting `JSONEachRow` format
 for inserted data. So that I've decided to implement small client for clickhouse which runs queries via http.
 
 Possible improvements:
