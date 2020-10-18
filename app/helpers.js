@@ -6,7 +6,8 @@ const checkIfTableExists = async (tableName) => {
   await clickhouse
     .query(`CREATE TABLE IF NOT EXISTS ${tableName} (
       name VARCHAR,
-      surname VARCHAR
+      surname VARCHAR,
+      age INT
     ) ENGINE = Log`);
   console.log(`created table ${tableName}`)
 };
@@ -29,7 +30,8 @@ const processCollectionToDB = async (keys) => {
     return accum;
   }, []);
 
-  // generate query string
+  // generate query string for each of the tables
+  const queryPromises = [];
   for (let i = 0; i < reducedData.length; i++) {
     const data = reducedData[i];
     const table = `${config.clickHouse.dbName}.${data.table}`;
@@ -38,8 +40,9 @@ const processCollectionToDB = async (keys) => {
 
     const insertData = data.dataSet.map(ds => JSON.stringify(ds)).join(' ');
     const query = `INSERT INTO ${table} FORMAT JSONEachRow ${insertData}\n`;
-    await clickhouse.query(query);
+    queryPromises.push(clickhouse.query(query));
   }
+  await Promise.all(queryPromises);
 
   // remove processed data from redis
   await redis.del(...keys);
