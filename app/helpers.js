@@ -9,7 +9,6 @@ const checkIfTableExists = async (tableName) => {
       surname VARCHAR,
       age INT
     ) ENGINE = Memory`);
-  console.log(`created table ${tableName}`)
 };
 
 const processCollectionToDB = async (keys) => {
@@ -43,6 +42,8 @@ const processCollectionToDB = async (keys) => {
     queryPromises.push(clickhouse.query(query));
   }
   await Promise.all(queryPromises);
+
+  console.log(`processed ${keys.length} objects`);
 
   // remove processed data from redis
   await redis.del(...keys);

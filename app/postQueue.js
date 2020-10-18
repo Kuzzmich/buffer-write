@@ -17,8 +17,9 @@ postQueue.process(async (job, done) => {
   const keys = await redis.fullscan('*');
   if (keys.length > 0) {
     await helpers.processCollectionToDB(keys);
+  } else {
+    console.log('Nothing to insert...');
   }
-  console.log(`processed ${keys.length} objects`);
 
   done();
 });
