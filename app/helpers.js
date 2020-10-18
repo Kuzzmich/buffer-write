@@ -8,7 +8,7 @@ const checkIfTableExists = async (tableName) => {
       name VARCHAR,
       surname VARCHAR,
       age INT
-    ) ENGINE = Log`);
+    ) ENGINE = Memory`);
   console.log(`created table ${tableName}`)
 };
 
