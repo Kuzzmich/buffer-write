@@ -2,7 +2,7 @@
 
 #### It uses:
 - `Redis` as buffer storage;
-- `bull queue` as cron job handler for delayed data posting. It also uses Redis as data storage, but it's set to use
+- `bull queue` as a cron job handler for delayed data inserting. It also uses Redis as data storage, but it's set to use
 separate redis db from buffer data.
 
 #### Application default settings:
@@ -51,8 +51,8 @@ Data model:
   }
 }
 ```
-Where `table` - table name where data will be inserted and you are able to set any table name you prefer, 
-`data` - key/value pairs of inserting data.
+Where `table` - table name where data will be inserted and you are able to set any table name you prefer because it will be
+created in case if it doesnt't exist, `data` - key/value pairs of inserting data.
 <br><br>
 
 #### Few words from the author
@@ -60,5 +60,5 @@ I tried to use couple of npm packages for clickhouse, but both of them had the b
 for inserted data. So that I've decided to implement small client for clickhouse which runs queries via http.
 
 Possible improvements:
-- create not existing tables depending on data and data types which should be inserted there
-- use some ready made library for clickhouse integration. It might simplify data querying for developer
+- create not existing tables depending on a data and data types which should be inserted there;
+- use some ready made library for clickhouse integration. It might simplify data querying for developers
