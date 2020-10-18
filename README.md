@@ -39,7 +39,7 @@ To start the app install packages using `yarn` or `npm`. Then type `yarn start` 
 you want to run the application with default settings. You don't have to create any databases in clickhouse before
 application start. You just have to provide proper clickhouse url address and database will be created automatically. 
 
-Endpoint to post data to `/post-data`.
+Endpoint to post data to `/api/post-data`.
 Data model: 
 ```json
 {
