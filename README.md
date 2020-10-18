@@ -1,5 +1,22 @@
 ## Buffer test application
 
+### TL;DR
+Post this json data
+```json
+{
+  "table": "actors_identities",
+  "data": {
+    "name": "Matt",
+    "surname": "Damon",
+    "age": 45
+  }
+}
+```
+To this endpoint url `http://localhost:8008/api/post-data`
+<br><br>
+
+### Full text 
+
 #### It uses:
 - `Redis` as buffer storage;
 - `bull queue` as a cron job handler for delayed data inserting. It also uses Redis as data storage, but it's set to use
