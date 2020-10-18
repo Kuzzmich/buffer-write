@@ -12,6 +12,7 @@ const postQueue = new Queue(
   }
 );
 
+// queue job handler
 postQueue.process(async (job, done) => {
   const keys = await redis.fullscan('*');
   if (keys.length > 0) {

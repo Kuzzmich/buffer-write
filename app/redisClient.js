@@ -7,9 +7,13 @@ const client = redis.createClient({
 
 
 const getAsync = promisify(client.get).bind(client);
+
 const setAsync = promisify(client.set).bind(client);
+
 const delAsync = promisify(client.del).bind(client);
+
 const scanAsync = promisify(client.scan).bind(client);
+
 const mgetAsync = promisify(client.mget).bind(client);
 
 const fullscan = async (pattern) => {

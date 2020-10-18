@@ -16,16 +16,15 @@ app.use(bodyParser.json());
 
 app.use('/api', api);
 
-app.use(async (error, req, res) => {
-  console.log(error);
-  res.send('Something went wrong! Try again');
+app.use(async (error, req, res, next) => {
+  console.error(error);
+  res.status(500).send('Something broke! Please try again...');
 });
 
 const httpServer = http.createServer(app);
 httpServer.listen(port, function () {
     console.log('Listening on port %d', httpServer.address().port);
 });
-
 
 postQueue.startPostingQueue();
 

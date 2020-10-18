@@ -1,10 +1,10 @@
 {
   "name": "buffer-test-app",
-  "description": "buffer app for ClickHouse data writing",
+  "description": "buffer app for ClickHouse data inserting",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.20.0",

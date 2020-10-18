@@ -8,6 +8,7 @@ const query = async (query) => {
   return res.data;
 };
 
+// init database on app start
 query(`CREATE DATABASE IF NOT EXISTS ${config.clickHouse.dbName}`)
   .then(() => console.log(`created database ${config.clickHouse.dbName}`));
 

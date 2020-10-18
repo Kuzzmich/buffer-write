@@ -30,7 +30,7 @@ const processCollectionToDB = async (keys) => {
     return accum;
   }, []);
 
-  // generate query string for each of the tables
+  // generate query string for each of the tables and run insert query
   const queryPromises = [];
   for (let i = 0; i < reducedData.length; i++) {
     const data = reducedData[i];
